@@ -27,14 +27,38 @@ const dfs = (node)=>{
     })
 }
 
-const rootNode = new TreeNode('A');
-const nodeA = new TreeNode('B');
-const nodeB = new TreeNode('C');
-const nodeC = new TreeNode('D');  
+// * Depth First Search Traversing output 
+const traversing = (node)=>{
+    const stack = [];
+    stack.push(node)
+    while(stack.length>0){
+    let top = stack.pop();
+    console.log("Root => ", top.value);
+    top.child.forEach(item => {
+        console.log(item.value," ");
+        stack.push(item);
+    })
+ }
+}
+
+
+const rootNode = new TreeNode('R');
+const nodeA = new TreeNode('A');
+const nodeB = new TreeNode('B');
+const nodeC = new TreeNode('C');
+const nodeD = new  TreeNode('D');
+const nodeE = new TreeNode('E');
+const nodeF = new TreeNode('F');
+
+
 
 rootNode.addChild(nodeA);
 rootNode.addChild(nodeB);
+rootNode.addChild(nodeE);
 nodeB.addChild(nodeC);
+nodeB.addChild(nodeD);
+nodeC.addChild(nodeF);
 
-dfs(rootNode)
+// dfs(rootNode)
+traversing(rootNode)
 // console.log(rootNode)
