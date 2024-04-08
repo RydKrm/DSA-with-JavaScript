@@ -77,6 +77,6 @@ const DFS = (node) =>{
 }
 
 // console.log(rootNode);
-// inOrderTraversal(rootNode)
+// inOrderTraversal(rootNode);
 DFS(rootNode);
 
